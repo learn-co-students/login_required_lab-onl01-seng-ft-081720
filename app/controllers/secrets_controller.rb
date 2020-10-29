@@ -7,7 +7,9 @@ class SecretsController < ApplicationController
 
   def show
     if current_user
-      secret = Secret.find_by(params[:id])
+      session
+    else
+      redirect_to '/new'
     end
 
   end
